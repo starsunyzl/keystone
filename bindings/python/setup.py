@@ -218,7 +218,7 @@ Keystone is available under a dual license:
 setup(
     provides=['keystone'],
     packages=['keystone'],
-    name='keystone-engine-patching',
+    name='keystone-engine',
     version=VERSION,
     author='Nguyen Anh Quynh',
     author_email='aquynh@gmail.com',
