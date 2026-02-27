@@ -13,10 +13,10 @@ jobs:
         os: [macos-latest, ubuntu-latest, windows-latest]
         platform: [x64]
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
 
     - name: Set up Python
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v6
       with:
         python-version: '3.x'
 
@@ -53,35 +53,9 @@ jobs:
              cd bindings/python && python setup.py build
         fi
 
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v7
       with:
          path: ${{ github.workspace }}/bindings/python/dist/*
          name: artifact_${{ matrix.os }}
 
-#
 # NOTE: this repo does not need to publish Keystone to PyPI
-#
-#  publish:
-#    needs: [build]
-#    runs-on: ubuntu-latest
-#    if: startsWith(github.ref, 'refs/tags')
-#    steps:
-#      - uses: actions/download-artifact@v2
-#        with:
-#          name: artifact
-#          path: dist
-#
-#      - name: Publish distribution 📦 to test PyPI
-#        uses: pypa/gh-action-pypi-publish@master
-#        with:
-#          user: __token__
-#          password: ${{ secrets.testpypi_pass }}
-#          repository_url: https://test.pypi.org/legacy/
-#
-#      - name: Publish distribution 📦 to PyPI
-#        if: ${{ success() }}
-#        uses: pypa/gh-action-pypi-publish@master
-#        with:
-#          user: __token__
-#          password: ${{ secrets.pypi_pass }}
-#
