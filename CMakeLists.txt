@@ -1,7 +1,7 @@
 # Keystone Assembler Engine (www.keystone-engine.org)
 # By Nguyen Anh Quynh, 2016
 
-cmake_minimum_required(VERSION 3.23)
+cmake_minimum_required(VERSION 3.15)
 project(keystone)
 
 set(KEYSTONE_VERSION_MAJOR 0)

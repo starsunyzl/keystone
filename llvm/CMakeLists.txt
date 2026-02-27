@@ -1,6 +1,6 @@
 # See docs/CMake.html for instructions about how to build LLVM with CMake.
 
-cmake_minimum_required(VERSION 3.23)
+cmake_minimum_required(VERSION 3.15)
 
 set(LLVM_INSTALL_TOOLCHAIN_ONLY ON)
 
